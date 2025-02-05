@@ -8,6 +8,10 @@ Como funciona os leds? Basicamente você precisa enviar uma sequência de dados 
 
 > https://cdn-shop.adafruit.com/datasheets/WS2812.pdf
 
+Mais detalhes sobre a implementação também pode ser encontrada no repositório oficial da desenvolvedora.
+
+> https://github.com/BitDogLab/BitDogLab-C/tree/main/neopixel_pio
+
 O primeiro passo é criar o projeto , nesse tutorial vamos utilizar o VSCode + SDK Pico em C.
 
 Depois, precisamos criar o código PIO que servirá para enviar os dados à GPIO conectado aos leds.
@@ -189,6 +193,13 @@ void show_queue(uint8_t len, uint8_t max_len){
     }
     sleep_us(10);
 }
+
+void clear_all(uint8_t len){
+    for(int i = 0; i < len; i++){
+        put_pixel(pio, sm, urgb_u32(0, 0, 0));//Apaga o led
+    }
+    sleep_us(10);
+}
 ```
 
 E na sua função principal inicialize os objetos/estruturas.
@@ -206,6 +217,8 @@ int main()
     while (true) {
         int r = rand() % 25;
         show_queue(r, 25);
+        sleep_ms(1000);
+        clear_all(25);
         sleep_ms(1000);
     }
 
