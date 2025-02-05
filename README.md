@@ -4,7 +4,7 @@ Nesse material, será um passo a passo de como usar Leds endereçaveis WS2812 us
 
 A placa contêm 25 leds endereçáveis conectados à porta GPIO 7 do microcontrolador.
 
-Como funciona os leds? Basicamente você precisa enviar uma sequência de dados para os leds na ordem das cores que você quer acender. Na nossa placa nos temos 25 leds, então se você mandar 25 cores, todos os leds acenderão na cor enviada. VOcê pode encontrar mais detalhes sobre o WS2812, no link:
+Como funciona os leds? Basicamente você precisa enviar uma sequência de dados para os leds na ordem das cores que você quer acender. Na nossa placa nos temos 25 leds, então se você mandar 25 cores, todos os leds acenderão na cor enviada. Você pode encontrar mais detalhes sobre o WS2812, no link:
 
 > https://cdn-shop.adafruit.com/datasheets/WS2812.pdf
 
